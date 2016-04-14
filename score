@@ -1,3 +1,6 @@
+source - http://www.math.sjsu.edu/~foster/dictionary.txt
+source - /usr/share/dict/words
+
 c70818d1dc3200bfa495114f8d1820e8, 248
 {"sessionId":"2af850373981514d1b26ea127d469c74",
 "data":{"totalWordCount":80,"correctWordCount":46,
@@ -5,4 +8,8 @@ c70818d1dc3200bfa495114f8d1820e8, 248
 {"sessionId":"e4b13945c0dbda1779e08e64f9f5d05c","data":{"totalWordCount":80,"correctWordCount":44,"totalWrongGuessCount":613,"score":267}}
 {"sessionId":"f0f8b99fa37a71a36de485bc8dde2bd0","data":{"totalWordCount":80,"correctWordCount":47,"totalWrongGuessCount":594,"score":346}}
 {"sessionId":"af893a993c7f2c928b72ccfb80c94439","data":{"totalWordCount":80,"correctWordCount":50,"totalWrongGuessCount":538,"score":462}}
-
+{"sessionId":"f36526abe89456c6848682861d767b9e","data":{"totalWordCount":80,"correctWordCount":34,"totalWrongGuessCount":179,"score":501}}
+{"sessionId":"1902966ca0990d09a34fa95c8bf05f90","data":{"totalWordCount":80,"correctWordCount":69,"totalWrongGuessCount":291,"score":1089}}
+{"sessionId":"aadbe652ccf76dec8890285c8e9b2b11","data":{"totalWordCount":80,"correctWordCount":70,"totalWrongGuessCount":316,"score":1084}}
+{"sessionId":"6ccc46641485cee41350d248c6f3c110","data":{"totalWordCount":80,"correctWordCount":71,"totalWrongGuessCount":282,"score":1138}}
+{"sessionId":"0c531e685b8a316c4f17c72648b9fff3","data":{"totalWordCount":80,"correctWordCount":72,"totalWrongGuessCount":281,"score":1159}}

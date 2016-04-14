@@ -1,6 +1,7 @@
 package model;
 
 import org.apache.http.HttpResponse;
+import org.apache.http.NoHttpResponseException;
 import org.apache.http.StatusLine;
 import org.apache.http.client.fluent.Content;
 import org.apache.http.client.fluent.Request;
@@ -13,21 +14,24 @@ import java.io.IOException;
 
 public class RestClient {
 
-    private static final String URL="https://strikingly-hangman.herokuapp.com/game/on";
+    private static final String URL = "https://strikingly-hangman.herokuapp.com/game/on";
 
     public String post(JSONObject body) throws IOException, GameHasEndedException {
         Response execute = Request.Post(URL).bodyString(body.toString(), ContentType.APPLICATION_JSON).execute();
 
-        HttpResponse httpResponse = execute.returnResponse();
-        if(httpResponse.getStatusLine().getStatusCode() == 200)
-        {
-            return EntityUtils.toString(httpResponse.getEntity());
-        }
-        else
-        {
-            System.out.println("Game has ended..");
+        try {
+            HttpResponse httpResponse = execute.returnResponse();
+            if (httpResponse.getStatusLine().getStatusCode() == 200) {
+                return EntityUtils.toString(httpResponse.getEntity());
+            } else {
+                System.out.println("Game has ended..");
+                throw new GameHasEndedException();
+            }
+        } catch (NoHttpResponseException e) {
+            System.out.println("Game has ended due to no response");
             throw new GameHasEndedException();
         }
+
     }
 
 }

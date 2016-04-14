@@ -43,7 +43,6 @@ public class ClientCommunicator {
     public JSONObject result(String sessionId) throws JSONException, IOException, GameHasEndedException {
 
         JSONObject jsonObject = new JSONObject();
-
         jsonObject.put("sessionId",sessionId).put("action","getResult");
         return new JSONObject(restClient.post(jsonObject));
     }

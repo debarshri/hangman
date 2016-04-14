@@ -37,11 +37,11 @@ public class Game {
 
             List<String> list1 = read("/test.txt");
             List<String> list2 = read("/dictionary.txt");
-            List<String> list3 = read("/test2.txt");
+         //   List<String> list3 = read("/test2.txt");
 
-            WordPreprocessor wordPreprocessor = new WordPreprocessor(new TraverseOnceStrategy());
+            WordPreprocessor wordPreprocessor = new WordPreprocessor(new TraverseOnceStrategyStrict());
 
-            wordPreprocessor.index( list1,list2, list3);
+            wordPreprocessor.index( list1,list2);
 
             List<Character> characters = new ArrayList<>();
             characters.addAll(wordPreprocessor.getWordlist());

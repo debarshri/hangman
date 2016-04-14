@@ -3,6 +3,7 @@ package game.strategy;
 import game.calc.Model;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -10,7 +11,7 @@ import java.util.stream.Collectors;
  */
 public class DontPlayStrategy implements StrategyInterface {
     @Override
-    public List<String> compute(String worder, List<Model> models, int attempts) {
+    public List<String> compute(String worder, List<Model> models, int attempts, Set<Character> guessedWord) {
 
 
         long count = worder.chars().filter(c -> c == '*').count();

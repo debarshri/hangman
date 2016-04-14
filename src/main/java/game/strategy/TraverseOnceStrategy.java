@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public class TraverseOnceStrategy implements StrategyInterface {
 
     @Override
-    public Collection<String> compute(String worder, List<Model> models, int attempt) {
+    public Collection<String> compute(String worder, List<Model> models, int attempt, Set<Character> guessedWord) {
 
 
         //Word stemming

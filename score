@@ -13,3 +13,5 @@ c70818d1dc3200bfa495114f8d1820e8, 248
 {"sessionId":"aadbe652ccf76dec8890285c8e9b2b11","data":{"totalWordCount":80,"correctWordCount":70,"totalWrongGuessCount":316,"score":1084}}
 {"sessionId":"6ccc46641485cee41350d248c6f3c110","data":{"totalWordCount":80,"correctWordCount":71,"totalWrongGuessCount":282,"score":1138}}
 {"sessionId":"0c531e685b8a316c4f17c72648b9fff3","data":{"totalWordCount":80,"correctWordCount":72,"totalWrongGuessCount":281,"score":1159}}
+INFO: New word for session : {"sessionId":"f49c4872feff8c4989726b31990ec79d","data":{"word":"*************","totalWordCount":80,"wrongGuessCountOfCurrentWord":0}}
+INFO: Current score :990, totalWordCount : 80, correctWordCount :66

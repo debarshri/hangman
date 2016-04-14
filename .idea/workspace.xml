@@ -2,32 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c40f21aa-3530-4fce-b4e5-8acf34f8c0c6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/game/strategy/DontPlayStrategy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/game/strategy/StrategyInterface.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/game/strategy/TraverseOnceStrategy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/game/strategy/TraverseOnceStrategyStrict.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/game/strategy/TraverseOnceStrategyWithScore.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/game/strategy/TraverseTwiceStrategy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/dictionary.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/test.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/test2.txt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_19_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_191.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_sql2o_sql2o_1_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/test/Regression.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/test/Game.java" afterPath="$PROJECT_DIR$/src/main/java/game/Game.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/test/Main.java" afterPath="$PROJECT_DIR$/src/main/java/game/Main.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/test/MapSorter.java" afterPath="$PROJECT_DIR$/src/main/java/game/calc/MapSorter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/test/Model.java" afterPath="$PROJECT_DIR$/src/main/java/game/calc/Model.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/test/Player.java" afterPath="$PROJECT_DIR$/src/main/java/game/Player.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/test/WordPreprocessor.java" afterPath="$PROJECT_DIR$/src/main/java/game/WordPreprocessor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/game/Guesser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score" afterPath="$PROJECT_DIR$/score" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/ClientCommunicator.java" afterPath="$PROJECT_DIR$/src/main/java/model/ClientCommunicator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/RestClient.java" afterPath="$PROJECT_DIR$/src/main/java/model/RestClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.txt" afterPath="$PROJECT_DIR$/test.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordguesser.iml" afterPath="$PROJECT_DIR$/wordguesser.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/Game.java" afterPath="$PROJECT_DIR$/src/main/java/game/Game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/WordPreprocessor.java" afterPath="$PROJECT_DIR$/src/main/java/game/WordPreprocessor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/strategy/DontPlayStrategy.java" afterPath="$PROJECT_DIR$/src/main/java/game/strategy/DontPlayStrategy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/strategy/StrategyInterface.java" afterPath="$PROJECT_DIR$/src/main/java/game/strategy/StrategyInterface.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/strategy/TraverseOnceStrategy.java" afterPath="$PROJECT_DIR$/src/main/java/game/strategy/TraverseOnceStrategy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/strategy/TraverseOnceStrategyStrict.java" afterPath="$PROJECT_DIR$/src/main/java/game/strategy/TraverseOnceStrategyStrict.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/strategy/TraverseOnceStrategyWithScore.java" afterPath="$PROJECT_DIR$/src/main/java/game/strategy/TraverseOnceStrategyWithScore.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/strategy/TraverseTwiceStrategy.java" afterPath="$PROJECT_DIR$/src/main/java/game/strategy/TraverseTwiceStrategy.java" />
     </list>
     <ignored path="wordguesser.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,7 +39,17 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/game/WordPreprocessor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+              <caret line="136" column="8" selection-start-line="136" selection-start-column="8" selection-end-line="136" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Guesser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/game/Guesser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -66,7 +61,7 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="13" column="59" selection-start-line="13" selection-start-column="59" selection-end-line="13" selection-end-column="59" />
               <folding>
-                <element signature="e#1191#1199#0" expanded="true" />
+                <element signature="e#1219#1227#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,11 +71,11 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/game/strategy/TraverseTwiceStrategy.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1105#1113#0" expanded="true" />
-                <element signature="e#1974#1982#0" expanded="true" />
+                <element signature="e#1156#1164#0" expanded="true" />
+                <element signature="e#2025#2033#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -90,7 +85,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/game/strategy/StrategyInterface.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="18" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -98,36 +93,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TraverseOnceStrategy.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/game/strategy/TraverseOnceStrategy.java">
+      <file leaf-file-name="score" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/score">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1061#1069#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.6948229">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/game/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/game/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6594005">
-              <caret line="43" column="54" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="41" column="99" selection-start-line="41" selection-start-column="73" selection-end-line="41" selection-end-column="99" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#816#817#0" expanded="true" />
@@ -141,9 +121,9 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/game/strategy/TraverseOnceStrategyStrict.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="38" column="51" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding>
-                <element signature="e#1132#1140#0" expanded="true" />
+                <element signature="e#1203#1211#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -211,7 +191,6 @@
         <option value="$PROJECT_DIR$/src/main/java/test/WordPreprocessor.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/MapSorter.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/score" />
         <option value="$PROJECT_DIR$/src/main/java/model/ClientCommunicator.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/RestClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/strategy/OneFilterStrategy.java" />
@@ -225,8 +204,9 @@
         <option value="$PROJECT_DIR$/src/main/java/game/strategy/StrategyInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/strategy/TraverseOnceStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/strategy/TraverseOnceStrategyStrict.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/WordPreprocessor.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/Game.java" />
+        <option value="$PROJECT_DIR$/src/main/java/game/WordPreprocessor.java" />
+        <option value="$PROJECT_DIR$/score" />
       </list>
     </option>
   </component>
@@ -1239,14 +1219,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/score">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/game/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1293,14 +1265,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/ClientCommunicator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/game/strategy/DontPlayStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1339,43 +1303,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/strategy/StrategyInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/game/strategy/TraverseOnceStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1061#1069#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/strategy/TraverseOnceStrategyStrict.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="51" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
-          <folding>
-            <element signature="e#1132#1140#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/strategy/TraverseOnceStrategyWithScore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="59" selection-start-line="13" selection-start-column="59" selection-end-line="13" selection-end-column="59" />
-          <folding>
-            <element signature="e#1191#1199#0" expanded="true" />
+            <element signature="e#1089#1097#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1383,20 +1317,12 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/game/strategy/TraverseTwiceStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1105#1113#0" expanded="true" />
-            <element signature="e#1974#1982#0" expanded="true" />
+            <element signature="e#1156#1164#0" expanded="true" />
+            <element signature="e#2025#2033#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/WordPreprocessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1416,15 +1342,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/ClientCommunicator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33242506">
+          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/strategy/StrategyInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/strategy/TraverseOnceStrategyWithScore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="59" selection-start-line="13" selection-start-column="59" selection-end-line="13" selection-end-column="59" />
+          <folding>
+            <element signature="e#1219#1227#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/strategy/TraverseOnceStrategyStrict.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="e#1203#1211#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/Guesser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/game/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6594005">
-          <caret line="43" column="54" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="99" selection-start-line="41" selection-start-column="73" selection-end-line="41" selection-end-column="99" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#816#817#0" expanded="true" />
             <element signature="e#876#877#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/WordPreprocessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="136" column="8" selection-start-line="136" selection-start-column="8" selection-end-line="136" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/score">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6948229">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

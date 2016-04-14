@@ -3,6 +3,7 @@ package game.strategy;
 import game.calc.Model;
 
 import java.util.List;
+import java.util.Set;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
@@ -14,7 +15,7 @@ public class TraverseTwiceStrategy implements StrategyInterface {
     private static final Logger logger = Logger.getLogger("Game");
 
     @Override
-    public List<String> compute(String worder, List<Model> models,int attempt) {
+    public List<String> compute(String worder, List<Model> models, int attempt, Set<Character> guessedWord) {
 
         //Word stemming
         List<String> model = models.stream()

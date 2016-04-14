@@ -4,6 +4,8 @@ import com.google.common.collect.Lists;
 import game.calc.MapSorter;
 import game.calc.Model;
 import game.strategy.StrategyInterface;
+import game.strategy.TraverseOnceStrategy;
+import game.strategy.TraverseOnceStrategyStrict;
 import org.apache.commons.collections.ListUtils;
 import org.apache.commons.lang3.mutable.MutableInt;
 
@@ -92,6 +94,8 @@ public class WordPreprocessor {
                                   Set<Character> guessedWord,
                                   int attempts) throws IOException {
 
+        WordPreprocessor wordPreprocessor = new WordPreprocessor(new TraverseOnceStrategyStrict());
+
         String trim = worder.replaceAll("\\*", "").trim();
 
         for (int i = 0; i < trim.length(); i++) {
@@ -109,7 +113,7 @@ public class WordPreprocessor {
             return characters.get(0);
         } else {
 
-            Collection<String> model = strategy.compute(worder,models,attempts);
+            Collection<String> model = strategy.compute(worder,models,attempts,guessedWord);
 
             if(model == null)
                 return null;
@@ -117,19 +121,22 @@ public class WordPreprocessor {
             if(model.size() == 0)
                 return null;
 
-            index(model);
+            wordPreprocessor.index(model);
 
-            List<Character> characters1 = Lists.newArrayList(wordlist);
+        //    System.out.println(Lists.newArrayList(model).subList(0,3));
+
+            List<Character> characters1 = Lists.newArrayList(wordPreprocessor.getWordlist());
             List<Character> intersection = ListUtils.intersection(characters, characters1);
-
 
             logger.fine("Model is "+model.size()+", " +
                     "Intersection size is "+intersection.size()+", " +
                     "new character list size is "+characters1.size()+", " +
                     "guessword size is "+guessedWord.size());
 
-            intersection.removeAll(guessedWord);
-            characters1.removeAll(guessedWord);
+      //      intersection.removeAll(guessedWord);
+      //      characters1.removeAll(guessedWord);
+
+         //   System.out.println(characters1.subList(0,3));
 
             for (int i = 0; i < trim.length(); i++) {
                 char index = trim.charAt(i);

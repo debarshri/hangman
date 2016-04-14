@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public class TraverseOnceStrategyStrict implements StrategyInterface {
 
     @Override
-    public Collection<String> compute(String worder, List<Model> models, int attempt) {
+    public Collection<String> compute(String worder, List<Model> models, int attempt, Set<Character> guessedWord) {
 
 
         //Word stemming
@@ -26,7 +26,7 @@ public class TraverseOnceStrategyStrict implements StrategyInterface {
                     {
                         if(! (worder.charAt(i) == '*'))
                         {
-                            if(! (worder.charAt(i) == word.charAt(i)))
+                            if(! (worder.charAt(i) == word.charAt(i)) || !guessedWord.contains(worder.charAt(i)))
                             {
                                 return false;
                             }

@@ -1,18 +1,13 @@
-import com.google.common.collect.ArrayListMultimap;
+package test;
+
 import com.google.common.collect.Lists;
-import com.google.common.collect.Multimap;
-import com.google.common.collect.TreeMultimap;
-import org.apache.commons.collections.CollectionUtils;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.apache.commons.collections.ListUtils;
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.mutable.MutableInt;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.*;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class WordPreprocessor {
 
@@ -27,6 +22,9 @@ public class WordPreprocessor {
         for(Collection<String> list : lists)
         {
             for (String data : list) {
+
+                data = data.replaceAll("'", "");
+
                 models.add(new Model(data.toUpperCase(), data.length(), calc_score(data.toUpperCase())));
 
                 updateProbabilisticWordToLength(data.toUpperCase());
@@ -79,7 +77,7 @@ public class WordPreprocessor {
         return sum;
     }
 
-    public Character computeGuess(String worder, List<Character> characters, List<Model> models) throws IOException {
+    public Character computeGuess(String worder, List<Character> characters, List<Model> models, Character guessedWord) throws IOException {
 
         WordPreprocessor wordPreprocessor = new WordPreprocessor();
 
@@ -92,6 +90,8 @@ public class WordPreprocessor {
                 characters.remove(Character.valueOf(index));
             }
         }
+
+        characters.remove(guessedWord);
 
         int key = calc_score(trim);
 
@@ -119,76 +119,49 @@ public class WordPreprocessor {
                         }
 
                         return true;
-//
-//                        //Thresholding..
-//                        if(word.length()/trim.length() < 3)
-//                        {
-//                            String s = worder.replaceAll("\\**", "*");
-//                            String[] split = s.split("\\*");
-//                            if(split.length == 2)
-//                            {
-//                              if(split[0].contains("*") || split[0].length() == 0)
-//                              {
-//                                  if(word.contains(split[1]))
-//                                  {
-//                                      System.out.println(word);
-//                                      return true;
-//                                  }
-//                                  else
-//                                  {
-//                                      return false;
-//                                  }
-//                              }
-//                                else if(split[1].contains("*") || split[1].length() == 0)
-//                              {
-//
-//                                  if(word.contains(split[0]))
-//                                  {
-//                                      System.out.println(word);
-//                                      return true;
-//                                  }
-//                                  else
-//                                  {
-//                                      return false;
-//                                  }
-//                              }
-//                                else {
-//                                  return false;
-//                              }
-//                            }
-//                        }
-//                        else
-//                        {
-//                            for (int i = 0; i < trim.length(); i++) {
-//                                char index = trim.charAt(i);
-//                                if (!word.contains(String.valueOf(index))) {
-//                                    return false;
-//                                }
-//                            }
-//
-//                            System.out.println(word);
-//                            return true;
-//                        }
-//
-//                        System.out.println(word);
-//                        return true;
-
                     })
                     .collect(Collectors.<String>toList());
+
 
 
             wordPreprocessor.index(model);
 
             List<Character> characters1 = Lists.newArrayList(wordPreprocessor.getWordlist());
 
-
             List<Character> intersection = ListUtils.intersection(characters, characters1);
 
-            if(intersection.size() > 0)
+            System.out.println("Intersection size "+intersection.size());
+            System.out.println("characters1 size "+characters1.size());
+
+            for (int i = 0; i < trim.length(); i++) {
+                char index = trim.charAt(i);
+                if (characters1.contains(index)) {
+                    characters1.remove(Character.valueOf(index));
+                }
+            }
+
+            for (int i = 0; i < trim.length(); i++) {
+                char index = trim.charAt(i);
+                if (intersection.contains(index)) {
+                    intersection.remove(Character.valueOf(index));
+                }
+            }
+
+            if(intersection.size() > 0 )
             {
+
+                intersection.remove(guessedWord);
                 return intersection.get(0);
             }
-            else {
+            else if(characters1.size() > 0){
+
+
+                characters1.remove(guessedWord);
+
+                return characters1.get(0);
+            }
+            else
+            {
                 return characters.get(0);
             }
         }

@@ -9,12 +9,12 @@ import java.util.List;
 /**
  * Created by dbasak on 4/12/16.
  */
-public class Abstraction {
+public class ClientCommunicator {
 
     private RestClient restClient = new RestClient();
 
 
-    public JSONObject start() throws JSONException, IOException {
+    public JSONObject start() throws JSONException, IOException, GameHasEndedException {
 
         JSONObject jsonObject = new JSONObject();
 
@@ -24,7 +24,7 @@ public class Abstraction {
 
     }
 
-    public JSONObject nextWord(String sessionId) throws JSONException, IOException {
+    public JSONObject nextWord(String sessionId) throws JSONException, IOException, GameHasEndedException {
 
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("sessionId",sessionId).put("action","nextWord");
@@ -32,7 +32,7 @@ public class Abstraction {
         return new JSONObject(restClient.post(jsonObject));
     }
 
-    public JSONObject guessWord(String sessionId, String a) throws JSONException, IOException {
+    public JSONObject guessWord(String sessionId, String a) throws JSONException, IOException, GameHasEndedException {
 
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("sessionId", sessionId).put("action","guessWord").put("guess",a);
@@ -40,7 +40,7 @@ public class Abstraction {
         return new JSONObject(restClient.post(jsonObject));
     }
 
-    public JSONObject result(String sessionId) throws JSONException, IOException {
+    public JSONObject result(String sessionId) throws JSONException, IOException, GameHasEndedException {
 
         JSONObject jsonObject = new JSONObject();
 

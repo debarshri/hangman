@@ -1,3 +1,5 @@
+package test;
+
 public class Model {
 
     private String word;

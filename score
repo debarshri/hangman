@@ -2,6 +2,7 @@ c70818d1dc3200bfa495114f8d1820e8, 248
 {"sessionId":"2af850373981514d1b26ea127d469c74",
 "data":{"totalWordCount":80,"correctWordCount":46,
 "totalWrongGuessCount":579,"score":341}}
-
 {"sessionId":"e4b13945c0dbda1779e08e64f9f5d05c","data":{"totalWordCount":80,"correctWordCount":44,"totalWrongGuessCount":613,"score":267}}
+{"sessionId":"f0f8b99fa37a71a36de485bc8dde2bd0","data":{"totalWordCount":80,"correctWordCount":47,"totalWrongGuessCount":594,"score":346}}
+{"sessionId":"af893a993c7f2c928b72ccfb80c94439","data":{"totalWordCount":80,"correctWordCount":50,"totalWrongGuessCount":538,"score":462}}
 

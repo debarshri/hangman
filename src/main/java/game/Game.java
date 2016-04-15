@@ -14,7 +14,6 @@ import org.codehaus.jettison.json.JSONObject;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.logging.Logger;
@@ -34,17 +33,13 @@ public class Game {
 
         try {
 
-
             List<String> list1 = read("/test.txt");
             List<String> list2 = read("/dictionary.txt");
-         //   List<String> list3 = read("/test2.txt");
 
+            /* Probabilistically determine which character should be guessed */
             WordPreprocessor wordPreprocessor = new WordPreprocessor(new TraverseOnceStrategyStrict());
-
             wordPreprocessor.index( list1,list2);
-
-            List<Character> characters = new ArrayList<>();
-            characters.addAll(wordPreprocessor.getWordlist());
+            List<Character> characters = new ArrayList<>(wordPreprocessor.getWordlist());
 
             File token = new File("token");
 
@@ -85,6 +80,7 @@ public class Game {
                 JSONObject jsonObject = clientCommunicator.guessWord(sessionId1,
                         String.valueOf(character));
                 JSONObject data = jsonObject.getJSONObject("data");
+
                 wordToSolve = data.getString("word");
                 wrongGuessCountOfCurrentWord = data.getInt("wrongGuessCountOfCurrentWord");
 

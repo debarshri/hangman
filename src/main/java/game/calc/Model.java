@@ -9,7 +9,6 @@ public class Model {
     public Model(String word, int length, int score) {
         this.word = word;
         this.length = length;
-
         //Not required
         this.score = score;
     }

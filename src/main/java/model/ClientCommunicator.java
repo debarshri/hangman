@@ -47,4 +47,11 @@ public class ClientCommunicator {
         return new JSONObject(restClient.post(jsonObject));
     }
 
+    public JSONObject submitResult(String sessionId) throws JSONException, IOException, GameHasEndedException {
+
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("sessionId", sessionId).put("action", "submitResult");
+        return new JSONObject(restClient.post(jsonObject));
+    }
+
 }

@@ -3,9 +3,7 @@ package game;
 import com.google.common.collect.Lists;
 import game.calc.MapSorter;
 import game.calc.Model;
-import game.strategy.StrategyInterface;
-import game.strategy.TraverseOnceStrategy;
-import game.strategy.TraverseOnceStrategyStrict;
+import game.strategy.*;
 import org.apache.commons.collections.ListUtils;
 import org.apache.commons.lang3.mutable.MutableInt;
 
@@ -28,29 +26,21 @@ public class WordPreprocessor {
         models = Lists.newArrayList();
     }
 
-    public void index(Collection<String>... lists) throws IOException {
+    public void process(Collection<String>... lists) throws IOException {
 
         for(Collection<String> list : lists)
         {
             for (String data : list) {
 
                 data = data.replaceAll("'", "");
-
                 models.add(new Model(data.toUpperCase(), data.length(), calc_score(data.toUpperCase())));
-
                 updateProbabilisticLengthwiseWord(data.toUpperCase());
             }
 
             Map<Character, MutableInt> characterMutableIntMap = MapSorter.sortByValue(lengthToWordProbability);
-
             Iterator<Map.Entry<Character, MutableInt>> iterator = characterMutableIntMap.entrySet().iterator();
-
             iterator.forEachRemaining(it -> wordlist.add(it.getKey()));
         }
-    }
-
-    public Map<Character, MutableInt> getLengthToWordProbability() {
-        return lengthToWordProbability;
     }
 
     public List<Character> getWordlist() {
@@ -69,7 +59,6 @@ public class WordPreprocessor {
 
             if (mutableInt == null) {
                 mutableInt = new MutableInt(1);
-
                 lengthToWordProbability.put(c, mutableInt);
             } else {
                 mutableInt.increment();
@@ -79,9 +68,7 @@ public class WordPreprocessor {
     }
 
     public static int calc_score(String data) {
-
         int sum = 0;
-
         for (int i = 0; i < data.length(); i++) {
             sum = +data.toUpperCase().charAt(i);
         }
@@ -95,7 +82,6 @@ public class WordPreprocessor {
                                   int attempts) throws IOException {
 
         WordPreprocessor wordPreprocessor = new WordPreprocessor(new TraverseOnceStrategyStrict());
-
         String trim = worder.replaceAll("\\*", "").trim();
 
         for (int i = 0; i < trim.length(); i++) {
@@ -104,8 +90,6 @@ public class WordPreprocessor {
                 characters.remove(Character.valueOf(index));
             }
         }
-
-        characters.removeAll(guessedWord);
 
         int incomingWordScore = calc_score(trim);
 
@@ -121,22 +105,14 @@ public class WordPreprocessor {
             if(model.size() == 0)
                 return null;
 
-            wordPreprocessor.index(model);
-
-        //    System.out.println(Lists.newArrayList(model).subList(0,3));
+            wordPreprocessor.process(model);
 
             List<Character> characters1 = Lists.newArrayList(wordPreprocessor.getWordlist());
             List<Character> intersection = ListUtils.intersection(characters, characters1);
 
             logger.fine("Model is "+model.size()+", " +
                     "Intersection size is "+intersection.size()+", " +
-                    "new character list size is "+characters1.size()+", " +
-                    "guessword size is "+guessedWord.size());
-
-      //      intersection.removeAll(guessedWord);
-      //      characters1.removeAll(guessedWord);
-
-         //   System.out.println(characters1.subList(0,3));
+                    "new character list size is "+characters1.size());
 
             for (int i = 0; i < trim.length(); i++) {
                 char index = trim.charAt(i);
@@ -151,6 +127,10 @@ public class WordPreprocessor {
                     intersection.remove(Character.valueOf(index));
                 }
             }
+
+            intersection.removeAll(guessedWord);
+            characters1.removeAll(guessedWord);
+            characters.removeAll(guessedWord);
 
             if(intersection.size() > 0 )
             {

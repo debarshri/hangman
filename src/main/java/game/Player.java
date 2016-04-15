@@ -1,5 +1,6 @@
 package game;
 
+import model.GameHasEndedException;
 import org.codehaus.jettison.json.JSONException;
 
 import java.io.File;
@@ -12,7 +13,7 @@ public class Player {
         this.game = game;
     }
 
-    public void start() throws IOException, JSONException {
+    public void start() throws IOException, JSONException, GameHasEndedException {
         for(int i = 0; i < 81; i++)
         {
             game.start();

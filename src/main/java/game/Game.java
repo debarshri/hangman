@@ -1,14 +1,10 @@
 package game;
 
-import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-import com.google.common.reflect.ClassPath;
-import game.calc.MapSorter;
 import game.strategy.*;
 import model.ClientCommunicator;
 import model.GameHasEndedException;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 
@@ -24,21 +20,21 @@ public class Game {
 
     private static final Logger logger = Logger.getLogger("Game");
     private ClientCommunicator clientCommunicator;
+    private String sessionId;
 
     public Game(ClientCommunicator clientCommunicator) {
         this.clientCommunicator = clientCommunicator;
     }
 
-    public void start() throws JSONException, IOException {
+    public void start() throws JSONException, IOException, GameHasEndedException {
 
         try {
 
             List<String> list1 = read("/test.txt");
             List<String> list2 = read("/dictionary.txt");
 
-            /* Probabilistically determine which character should be guessed */
             WordPreprocessor wordPreprocessor = new WordPreprocessor(new TraverseOnceStrategyStrict());
-            wordPreprocessor.index( list1,list2);
+            wordPreprocessor.process(list1,list2);
             List<Character> characters = new ArrayList<>(wordPreprocessor.getWordlist());
 
             File token = new File("token");
@@ -47,16 +43,15 @@ public class Game {
                 JSONObject start;
                 start = clientCommunicator.start();
 
-                String sessionId2 = start.getString("sessionId");
-                FileUtils.writeStringToFile(token, sessionId2);
+                sessionId = start.getString("sessionId");
+                FileUtils.writeStringToFile(token, sessionId);
             }
 
-            String sessionId1 = FileUtils.readFileToString(new File("token"));
-            JSONObject sessionId = clientCommunicator.nextWord(sessionId1);
+            sessionId = FileUtils.readFileToString(new File("token"));
+            JSONObject sessionId = clientCommunicator.nextWord(this.sessionId);
             String wordToSolve = sessionId.getJSONObject("data").getString("word");
 
             Set<Character> guessedWords = Sets.newHashSet();
-
             Character character = characters.get(0);
             int wrongGuessCountOfCurrentWord = 0;
 
@@ -69,7 +64,8 @@ public class Game {
                 character = wordPreprocessor.computeGuess(wordToSolve,
                         characters,
                         wordPreprocessor.getModels(),
-                        guessedWords,wrongGuessCountOfCurrentWord);
+                        guessedWords,
+                        wrongGuessCountOfCurrentWord);
 
                 if (character == null) {
                     break;
@@ -77,7 +73,7 @@ public class Game {
 
                 logger.info("Now guessing " + character + " for word " + wordToSolve);
 
-                JSONObject jsonObject = clientCommunicator.guessWord(sessionId1,
+                JSONObject jsonObject = clientCommunicator.guessWord(this.sessionId,
                         String.valueOf(character));
                 JSONObject data = jsonObject.getJSONObject("data");
 
@@ -89,13 +85,16 @@ public class Game {
                 characters.remove(character);
             }
 
-            JSONObject result = clientCommunicator.result(sessionId1);
+            JSONObject result = clientCommunicator.result(this.sessionId);
 
             logger.info("Current score :"+result.getJSONObject("data").getInt("score")+", totalWordCount : "+
                     result.getJSONObject("data").getInt("totalWordCount")+", correctWordCount :"+
                     result.getJSONObject("data").getInt("correctWordCount"));
 
         } catch (GameHasEndedException e) {
+            logger.warning("Game has ended");
+            JSONObject jsonObject = clientCommunicator.submitResult(this.sessionId);
+            logger.info(jsonObject.toString());
             System.exit(0);
         }
     }

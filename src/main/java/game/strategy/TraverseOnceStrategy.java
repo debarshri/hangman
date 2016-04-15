@@ -17,7 +17,8 @@ public class TraverseOnceStrategy implements StrategyInterface {
 
 
         //Word stemming
-        Set<String> model = models.stream()
+
+        return models.stream()
                 .filter(model1 -> model1.getLength() >= worder.length())
                 .map(Model::getWord)
                 .filter(word -> {
@@ -36,8 +37,5 @@ public class TraverseOnceStrategy implements StrategyInterface {
                     return true;
                 })
                 .collect(Collectors.<String>toSet());
-
-
-        return model;
     }
 }
